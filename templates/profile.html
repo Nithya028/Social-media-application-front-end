@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            background-image: url("/static/bg2.jpg");
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-image: url("/static/bg2.jpg"); 
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .user-info {
+            margin-bottom: 20px;
+        }
+        .post {
+            border: 1px solid #ccc;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.5); 
+            margin-bottom: 20px;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+        .post h2 {
+            margin-top: 0;
+        }
+        .post-content {
+            margin-top: 10px;
+        }
+        .post-image {
+            max-width: 100%;
+            border-radius: 5px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #ed51cb; 
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border: none; 
+        }
+        .btn:hover {
+            background-color: #cc37ac; 
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>User Profile</h1>
+        <div class="user-info">
+            <h2>User Information</h2>
+            <p><strong>Username:</strong> {{ user.username }}</p>
+            <p><strong>First Name:</strong> {{ first_name }}</p>
+            <p><strong>Last Name:</strong> {{ last_name }}</p>
+            <p><strong>Phone Number:</strong> {{ phone_number }}</p>
+            <p><strong>Birthday:</strong> {{ user.birthday }}</p>
+            <a href="/edit_profile" class="btn">Edit Profile</a>  <!-- Edit Profile button -->
+        </div>
+        <div class="posts">
+            <h2>User Posts</h2>
+            
+            {% for post in posts %}
+            <div class="post">
+                <h2>{{ post.title }}</h2>
+                <p><strong>Caption:</strong> {{ post.caption }}</p> 
+                <p>{{ post.content }}</p>
+                {% if post.image %}
+                <img src="{{ post.image }}" alt="Post Image" class="post-image">
+                {% endif %}
+                <a href="/edit_post/{{ post.id }}" class="btn">Edit</a> 
+                <a href="/delete_post/{{ post.id }}" class="btn" onclick="return confirm('Are you sure you want to delete this post?')">Delete</a> <!-- Delete Post button with confirmation -->
+            </div>
+            {% endfor %}
+        </div>
+        
+        
+        <a href="/add_post" class="btn">Add Post</a>
+    </div>
+</body>
+</html>

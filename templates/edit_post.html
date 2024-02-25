@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Post</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url("/static/bg2.jpg"); 
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        form {
+            margin-top: 20px;
+            max-width: 600px; 
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.5); 
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"],
+        input[type="textarea"],
+        input[type="file"],
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #ed51cb;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #cc37ac;
+        }
+    </style>
+</head>
+<body>
+    <h1>Edit Post</h1>
+    <form action="{{ url_for('edit_post', post_id=post.id) }}" method="POST" enctype="multipart/form-data">
+        <label for="title">Title:</label><br>
+        <input type="text" id="title" name="title" value="{{ post.title }}" required><br><br>
+        
+        <label for="caption">Caption:</label><br>
+        <input type="textarea" id="caption" name="caption" value="{{ post.caption }}" required><br><br>
+        
+        <label for="post_type">Select Post Type:</label><br>
+        <select id="post_type" name="post_type" required>
+            <option value="image" {% if post.content_type == 'image' %} selected {% endif %}>Image</option>
+            <option value="video" {% if post.content_type == 'video' %} selected {% endif %}>Video</option>
+        </select><br><br>
+        
+        <label for="file">Choose File:</label><br>
+        <input type="file" id="file" name="file" accept="image/*,video/*"><br><br>
+        
+        <input type="submit" value="Save Changes">
+    </form>
+</body>
+</html>
