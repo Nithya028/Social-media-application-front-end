@@ -37,5 +37,6 @@ JAVASCRIPT
 
 ![SEARCH](https://github.com/Nithya028/Social-media-application-front-end/assets/127539831/b2e7b157-9f6b-46a9-9e90-a9813c280f59)
 
- 
+
+
 
