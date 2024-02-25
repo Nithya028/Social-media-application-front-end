@@ -1,1 +1,15 @@
 # Social-media-application-front-end
+Tools used:
+HTML 
+CSS
+JAVASCRIPT
+ 1)LOGIN PAGE
+ 2)REGISTER PAGE
+ 3)HOME PAGE
+ 4)ADD_POST PAGE
+ 5)EDIT_POST PAGE
+ 6)PROFILE PAGE
+ 7)EDIT PROFILE PAGE
+ 
+ 
+
