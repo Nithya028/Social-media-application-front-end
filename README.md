@@ -38,5 +38,41 @@ JAVASCRIPT
 ![SEARCH](https://github.com/Nithya028/Social-media-application-front-end/assets/127539831/b2e7b157-9f6b-46a9-9e90-a9813c280f59)
 
 
+# Application Flow
+# Homepage (/):
 
+Redirects users to the login page.
+# Login (/login):
+
+Users can log in with their username and password.
+Upon successful login, users are redirected to their home page.
+If login fails, an error message is displayed.
+# Registration (/register):
+
+New users can register with a unique username, password, and personal details.
+Once registered, users are redirected to the home page.
+# Home (/home):
+
+Displays a feed of posts from other users.
+Users can search for posts by username.
+# Profile (/profile):
+
+Displays the user's profile information and their posts.
+Users can edit their profile details.
+Users can add, edit, or delete their posts.
+# Edit Profile (/edit_profile):
+
+Users can update their profile information, including username, first name, last name, and phone number.
+# Add Post (/add_post):
+
+Allows users to create a new post with a title, caption, and optional file upload (image or video).
+# Edit Post (/edit_post/<post_id>):
+
+Users can edit their existing posts, including changing the title, caption, and associated file.
+# Delete Post (/delete_post/<post_id>):
+
+Users can delete their posts.
+# Logout (/logout):
+
+Logs the user out of the application and redirects them to the login page.
 
